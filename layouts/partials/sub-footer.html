@@ -2,9 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="sub-footer-inner">
+        <div class="secondary-menu">
           <ul>
-            <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.legal }}
+            <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+              <a href="{{ .URL }}">
+                <span>{{ .Name }}</span>
+              </a>
+            </li>
+            {{end}}
+            {{/*  <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>  */}}
+
           </ul>
         </div>
       </div>

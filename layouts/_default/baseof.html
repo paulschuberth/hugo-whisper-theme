@@ -33,24 +33,25 @@
     {{ end }}
     {{ end }}
 
-    {{ if $displaySidebar }}
     <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
       <div class="row">
+    {{ if $displaySidebar }}
         <div class="col-12 col-md-3 mb-3">
           <div class="sidebar">
             {{ partial "sidebar.html" . }}
           </div>
         </div>
+        {{ end }}
         <div class="col-12 col-md-9">
           {{ block "main" . }}
           {{ end }}
         </div>
       </div>
     </div>
-    {{ else }}
-    {{ block "main" . }}
-    {{ end }}
-    {{ end}}
+    {{/*  {{ else }}  */}}
+    {{/*  {{ block "main" . }}  */}}
+    {{/*  {{ end }}  */}}
+    {{/*  {{ end}}  */}}
   </div>
 
   {{ partial "sub-footer.html" . }}
