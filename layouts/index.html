@@ -21,17 +21,29 @@
     <div class="row">
       <div class="col-12">
         <h1 class="title">{{ .Title | default .Site.Title }}</h1>
-        <div class="content">
           {{ if .Content }}
           {{ .Content }}
-          {{ else }}
-          <p>{{ .Site.Params.homepage_intro }}</p>
           {{ end }}
+          <div class="postContainer">
+            {{ range $index, $post := (where .Site.RegularPages "Section" "posts") }}
+              {{ if eq $index 0 }}
+              <div class="CurrentPost">
+                <img src="{{ .Params.image }}"/>
+              {{ end }}
+              <div>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Summary }}</p>
+              </div>              
+              {{ if eq $index 0 }}
+                </div>
+              {{ end }}
+            {{ end }}
+            
+          </div>
+          <a class="button button-primary mb-2" href="{{ .Site.Params.homepage_button_link | relURL }}">
+            {{ .Site.Params.homepage_button_text }}
+          </a>
         </div>
-        <a class="button button-primary mb-2" href="{{ .Site.Params.homepage_button_link | relURL }}">
-          {{ .Site.Params.homepage_button_text }}
-        </a>
-      </div>
     </div>
   </div>
 </div>

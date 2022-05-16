@@ -51,23 +51,19 @@ body {
   padding-right: $grid-gutter-width;
 }
 
-// Display breakpoints for DEV
-// body:after {
-//   color: #000000;
-//   font-size: 12px;
-//   padding: 5px;
-//   font-weight: bold;
-//   right: 10px;
-//   position: fixed;
-//   text-align: center;
-//   text-transform: uppercase;
-//   bottom: 10px;
-//   width: 200px;
-//   z-index: 9999;
-//   border: solid 1px #000000;
-//   @each $name, $value in $grid-breakpoints {
-//     @include media-breakpoint-up($name) {
-//       content: "#{$name} - min-width: #{$value}";
-//     }
-//   }
-// }
+.postContainer {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "CurrentPost CurrentPost"
+    ". ."
+    ". ."; 
+}
+.CurrentPost { grid-area: CurrentPost; }
+
+.CurrentPost > img  {
+  max-width: 100%;
+  margin-bottom: 1em;
+}
