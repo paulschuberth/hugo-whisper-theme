@@ -33,12 +33,12 @@
               <div>
                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                 <p>{{ .Summary }}</p>
-              </div>              
+              </div>
               {{ if eq $index 0 }}
                 </div>
               {{ end }}
             {{ end }}
-            
+
           </div>
           <a class="button button-primary mb-2" href="{{ .Site.Params.homepage_button_link | relURL }}">
             {{ .Site.Params.homepage_button_text }}
