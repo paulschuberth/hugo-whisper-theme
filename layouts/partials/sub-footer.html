@@ -2,8 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="secondary-menu">
-          <ul>
+      <ul>
             {{ $currentPage := . }}
             {{ range .Site.Menus.legal }}
             <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
@@ -15,6 +14,13 @@
             {{/*  <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>  */}}
 
           </ul>
+        <div class="sub-footer-inner">
+          {{ if .Site.Data.social }}
+            {{ partial "social.html" . }}
+          {{ end }}
+          {{ with .Site.Params.footer.copyright_text }}
+            <div class="copyright">{{ . | safeHTML }}</div>
+          {{ end }}
         </div>
       </div>
     </div>
