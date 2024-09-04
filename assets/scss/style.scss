@@ -2,13 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Lora:400,700|Roboto+Mono:300,400');
 
 // Bootstrap
-@import 'bootstrap/functions';
 @import 'bootstrap-variables';
-@import 'bootstrap/variables';
-@import 'bootstrap/mixins';
-@import 'bootstrap/reboot';
-@import 'bootstrap/utilities';
-@import 'bootstrap/grid';
+@import 'bootstrap/bootstrap-reboot';
+@import 'bootstrap/bootstrap-grid';
+@import 'bootstrap/bootstrap-utilities';
 @import 'bootstrap/tables';
 
 // Libraries
@@ -34,6 +31,7 @@
 @import 'components/whitebox';
 @import 'components/overview';
 @import 'components/anchor';
+@import 'components/social';
 
 // Pages
 @import 'pages/home';
@@ -69,3 +67,4 @@ body {
   max-width: 100%;
   margin-bottom: 1em;
 }
+
